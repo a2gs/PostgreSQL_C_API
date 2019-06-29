@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	snprintf(str, LEN, "%d", rowId);
 	paramValues[0] = str;
 
-	PGconn *conn = PQconnectdb("user=janbodnar dbname=testdb");
+	PGconn *conn = PQconnectdb("hostaddr=192.168.2.130 port=5432 dbname=webdevdb user=webdev password=webdev");
 
 	if(PQstatus(conn) == CONNECTION_BAD){
 		fprintf(stderr, "Connection to database failed: %s\n", PQerrorMessage(conn));
